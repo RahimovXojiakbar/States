@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+
+<div class="section section-padding  mb-10">
+    <div class="container">
+        <!-- Blog Wrapper Start -->
+        <b>
+            <a class="btn btn-secondary btn-hover-primary  mb-2" style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.3); width: 10px; height: 30px; border: 1px solid grey;  display: flex; align-items: center; justify-content: center;" type="submit" href="{% url 'mfy_detail_url' neighborhoods.MFY.uuid  %}">←</a>
+        </b>
+        <div class="blog-wrapper">
+            
+            
+
+            <div class="card mt-2 mb-2" style="border-radius: 5px; margin: 5%; box-shadow:4px 4px 15px rgba(0, 0, 0, 0.3)">
+                <div class="blog-details-wrapper mt-2 mb-2" style="margin: 2%;">
+                    <h3 style="text-align: center;">Neighborhood: {{neighborhoods.title}}</h3>
+                 
+                    <div class="row">
+                        <div class="col">
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Elder:
+                                <b>{{neighborhoods.elder}}</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Area:
+                                <b>{{neighborhoods.area_km_kv}} km²</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Population:
+                                <b>{{neighborhoods.people}} person</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Population density:
+                                <b>{{neighborhoods.population_density}} (person/km²)</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Unemployment Rate:
+                                <b>{{neighborhoods.unemployment_rate}} %</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Average Income:
+                                <b>{{neighborhoods.avg_income}} $</b>
+                            </p>
+                            
+                        </div>
+                        <div class="col">
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Young Population (0-14):
+                                <b>{{neighborhoods.young_population}} person</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Elderly Population (65+):
+                                <b>{{neighborhoods.elderly_population}} person</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Working Population (15-64):
+                                <b>{{neighborhoods.working_population}} person</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Highly Educated:
+                                <b>{{neighborhoods.education_high}} </b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Middly Educated:
+                                <b>{{neighborhoods.education_middle}} </b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Uneducated:
+                                <b>{{neighborhoods.no_education}} </b>
+                            </p>
+                            
+
+                        </div>
+                    </div>
+                    <div class="col-auto mt-5" style="display: flex; justify-content: center;">
+                        <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Change At:
+                            <b>{{neighborhoods.change_at}}</b>
+                        </p>
+                    </div>
+                    <div class="col mt-5" style="display: flex; justify-content: center;">
+                        <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">About:
+                            <b>{{neighborhoods.about}}</b>
+                        </p>
+                    </div>
+                   
+
+                </div>
+            </div>
+            
+            
+            
+            <div class="card mt-5 mb-5 mt-5" style="border-radius: 5px; margin: 5%; box-shadow:4px 4px 15px rgba(0, 0, 0, 0.3)">
+                <div class="blog-details-wrapper mt-5 mb-5" style="margin: 2%;">
+                        <b  style="display: flex; justify-content: center;">{{neighborhoods.house.count}} House</b>
+                            <div class="blog-details-label">
+                                <ul class="tag-list" style="display: flex; justify-content: center;">
+                                    {% for house in neighborhoods.house.all %}
+                                    <li><a href="{% url 'house_detail_url' house.uuid %}">{{house.house_number}}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        
+                </div>
+            </div>
+</div>
+
+{% endblock content %}  

@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<div class="section section-padding  mb-10">
+    <div class="container">
+
+        <!-- Blog Wrapper Start -->
+        <div class="blog-wrapper">
+            <b>
+                <a class="btn btn-secondary btn-hover-primary" style="width: 10px; height: 30px; margin-top: -50px; box-shadow:4px 4px 15px rgba(0, 0, 0, 0.3); border: 1px solid grey;  display: flex; align-items: center;  justify-content: center;" type="submit" href="{% url 'states_url' %}">←</a>
+            </b>
+            
+
+            <div class="card mt-2 mb-2" style="border-radius: 5px; margin: 5%; box-shadow:4px 4px 15px rgba(0, 0, 0, 0.3)">
+                <div class="blog-details-wrapper mt-2 mb-2" style="margin: 2%;">
+                    <div class="row">
+                        <div class="col-6" style="display: flex; justify-content: center; align-items: center;">
+                            <img src="{{state_query.flag.url}}" alt="Flag" style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1); height: 200px; width: 400px;">
+                        </div>
+                        <div class="col-6">
+                            <h3>State: {{state_query.title}}</h3>
+                                <div class="card" style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">
+                                    <div class="row" style="margin: 1%;">
+                                        <div class="col">
+                                            <p>Continent:
+                                                <b>{{state_query.continent}}</b>
+                                            </p>
+                                            <p>President:
+                                                <b>{{state_query.president}}</b>
+                                            </p>
+                                            <p>Area:
+                                                <b>{{state_query.area_km_kv}} km²</b>
+                                            </p>
+                                        </div>
+                                        <div class="col">
+                                            <p>Population:
+                                                <b>{{state_query.people}}</b>
+                                            </p>
+                                            <p>Capital:
+                                                <b>{{state_query.capital}}</b>
+                                            </p>
+                                            <p>Language:
+                                                <b>{{state_query.language}}</b>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            
+                        </div>
+                    </div>
+                    
+                
+                </div>
+            </div>
+
+
+            <div class="card mt-5 mb-5" style="border-radius: 5px; margin: 5%; box-shadow:4px 4px 15px rgba(0, 0, 0, 0.3)">
+                <div class="blog-details-wrapper mt-5 mb-5" style="margin: 2%;">
+                    <div class="row">
+                        <div class="col">
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Anthem:
+                                <b>{{state_query.anthem}}</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">About:
+                                <b>{{state_query.about}}</b>
+                            </p>
+                        </div>
+                        <div class="col" style="display: flex; justify-content: center;">
+                            <img src="{{ state_query.emblem.url }}" alt="Emblem" style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1); height: 200px; width: 200px; border-radius: 10px;">
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card mt-5 mb-5" style="border-radius: 5px; margin: 5%; box-shadow:4px 4px 15px rgba(0, 0, 0, 0.3)">
+    
+                <div class="blog-details-wrapper mt-5 mb-5" style="margin: 2%;">
+                    
+                    <div class="row">
+                        
+                        
+                        <h4 style="text-align: center;">{{state_query.state}} Statistics</h4>
+                        <div class="col">
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">GDP:
+                                <b>{{state_query.gdp}} $</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Uneployment Rate:
+                                <b>{{state_query.unemployment_rate}} %</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Inflation Rate:
+                                <b>{{state_query.inflation_rate}} %</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Poverty Rate:
+                                <b>{{state_query.poverty_rate}} %</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Literaacy Rate:
+                                <b>{{state_query.literacy_rate}} %</b>
+                            </p>
+                        </div>
+                        <div class="col">
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Life expectancy:
+                                <b>{{state_query.life_expectancy}}</b> year
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Population Growth Rate:
+                                <b>{{state_query.population_growth_rate}} %</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Urban Population Percentage:
+                                <b>{{state_query.urban_population_percentage}} %</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Birth Rate:
+                                <b>{{state_query.birth_rate}} %</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Death Rate:
+                                <b>{{state_query.death_rate}} %</b>
+                            </p>
+                        </div>
+                        
+                    </div>
+                    <div class="row mt-5 mb-2" style="justify-content: center;">
+            
+                        <div class="col-auto">
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Changed at:
+                                <b>{{state_query.changed_at}} </b>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card mt-5 mb-5 mt-5" style="border-radius: 5px; margin: 5%; box-shadow:4px 4px 15px rgba(0, 0, 0, 0.3)">
+                <div class="blog-details-wrapper mt-5 mb-5" style="margin: 2%;">
+                        <b style="display: flex; justify-content: center;">{{state_query.region.count}} Regions</b>
+                            <div class="blog-details-label">
+                                <ul class="tag-list" style="display: flex; justify-content: center;">
+                                    
+                                    {% for region in state_query.region.all %}
+                                    <li><a href="{% url 'region_detail_url' region.uuid %}" style="margin: 5px; align-items: center; justify-content: center; display: flex;"><h6>{{region.title}}</h6></a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}  

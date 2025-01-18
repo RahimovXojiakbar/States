@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+    .flag {
+      width: 145px;
+      height: 120px;
+    }
+  </style>
+
+<div style="position: relative;">
+    <div class="login-header-search dropdown" style="float: left; box-shadow:4px 4px 15px rgba(0, 0, 0, 0.3); border-radius: 30px; margin-left: 10.5%; margin-top: 23px;">
+        <button class="search-toggle" data-bs-input="dropdown"><i class="flaticon-loupe"></i></button>
+    
+        <div class="search-input dropdown-menu">
+            <form action="{% url 'states_url' %}" method="get">
+                <input 
+                    type="text" 
+                    name="search_query" 
+                    placeholder="Search here" 
+                    style="background-color: white; border: 1px solid grey; color: black;" 
+                    value="{{ search_query|default:'' }}"
+
+                >
+                <input type="hidden" name="states_filter" value="{{ request.GET.states_filter }}">
+                <button type="submit" style="display: none;"></button>
+            </form>
+        </div>
+    </div>
+    
+    
+
+    
+   
+    <div class="top-bar-filter" style="float: right; margin-right: 10.5%;">
+        <ul class="filter-check">
+            <li>
+                <div class="courses-select" style="box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3); border-radius: 18px;">
+                    <form action="{% url 'states_url' %}" method="get">
+                        <label for="autoSizingSelect" class="visually-hidden">Preference</label>
+                        <select name="states_filter" id="autoSizingSelect" onchange="this.form.submit()">
+                            {% for continent in continents %}
+                            <option value="{{ continent.value }}" {% if continent.selected %}selected{% endif %}>
+                                {{ continent.name }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </form>
+                    
+                    
+                </div>
+            </li>
+           
+        </ul>
+    </div>
+</div>
+
+
+<div class="section section-padding mt-n10">
+    <div class="container">
+
+        <!-- Blog Wrapper Start -->
+        <div class="blog-wrapper">
+            <div class="row">
+                {% for state in paginatsa %}
+                <div class="col-3">
+
+                    <!-- Single Blog Start -->
+                    <div class="single-blog" style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.3)">
+                        <div class="blog-image">
+                            <a href="#"><img src="{{ state.flag.url }}" alt="State Flag"  class='flag'>
+                            </a>
+                        </div>
+                        <div class="blog-content">
+                            <h4 class="title"  style="justify-content: center; display: flex;">{{ state.title }}</h4>
+                            <a href="{% url 'state_detail_url' state.uuid %}" class="btn btn-secondary btn-hover-primary"  style="justify-content: center; display: flex;">Read More</a>
+                        </div>
+                    </div>
+                    <!-- Single Blog End -->
+
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- Blog Wrapper End -->
+
+        <!-- Page Pagination Start -->
+        <div class="page-pagination">
+            <ul class="pagination justify-content-center">
+                {% if paginatsa.has_previous %}
+                    <li><a href="{% url 'states_url' %}?page={{ paginatsa.previous_page_number }}"><i class="icofont-rounded-left"></i></a></li>
+                {% else %}
+                    <li><a href="#"><i class="icofont-rounded-left"></i></a></li>
+                {% endif %}
+        
+                {% for num in paginatsa.paginator.page_range %}
+                    {% if paginatsa.number == num %}
+                        <li><a class="active" href="#">{{ num }}</a></li>
+                    {% else %}
+                        <li><a href="{% url 'states_url' %}?page={{ num }}">{{ num }}</a></li>
+                    {% endif %}
+                {% endfor %}
+        
+                {% if paginatsa.has_next %}
+                    <li><a href="{% url 'states_url' %}?page={{ paginatsa.next_page_number }}"><i class="icofont-rounded-right"></i></a></li>
+                {% else %}
+                    <li><a href="#"><i class="icofont-rounded-right"></i></a></li>
+                {% endif %}
+            </ul>
+        </div>
+        <!-- Page Pagination End -->
+
+    </div>
+</div>
+
+{% endblock content %}

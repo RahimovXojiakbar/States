@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+
+<div class="section section-padding  mb-10">
+    <div class="container">
+        <!-- Blog Wrapper Start -->
+        <b>
+            <a class="btn btn-secondary btn-hover-primary  mb-2" style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.3); width: 10px; height: 30px; border: 1px solid grey;  display: flex; align-items: center; justify-content: center;" type="submit" href="{% url 'neighborhood_detail_url' houses.neighborhood.uuid  %}">←</a>
+        </b>
+        <div class="blog-wrapper">
+            
+            
+
+            <div class="card mt-2 mb-2" style="border-radius: 5px; margin: 5%; box-shadow:4px 4px 15px rgba(0, 0, 0, 0.3)">
+                <div class="blog-details-wrapper mt-2 mb-2" style="margin: 2%;">
+                    <h3 style="text-align: center;">House: {{houses.house_number}} {{houses.a_b}}</h3>
+                 
+                    <div class="row">
+                        <div class="col">
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">House Boss:
+                                <b>{{houses.house_boss}}</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Status:
+                                <b>{{houses.status}}</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Population:
+                                <b>{{houses.people}} person</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Area:
+                                <b>{{houses.area_kv_m}} m²</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Highly Educated:
+                                <b>{{houses.education_high}} </b>
+                            </p>
+                            
+                            
+                        </div>
+                        <div class="col">
+                            
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Middly Educated:
+                                <b>{{houses.education_middle}} person</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Uneducated:
+                                <b>{{houses.no_education}} person</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Electricity Available:
+                                <b>{{houses.electricity_available}} </b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Water Available:
+                                <b>{{houses.water_available}} </b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Gas Available:
+                                <b>{{houses.gas_available}} </b>
+                            </p>
+                            
+
+                        </div>
+                    </div>
+                    <div class="col-auto mt-5" style="display: flex; justify-content: center;">
+                        <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Change At:
+                            <b>{{houses.change_at}}</b>
+                        </p>
+                    </div>
+                    
+                   
+
+                </div>
+            </div>
+            
+            
+            
+            <div class="card mt-5 mb-5 mt-5" style="border-radius: 5px; margin: 5%; box-shadow:4px 4px 15px rgba(0, 0, 0, 0.3)">
+                <div class="blog-details-wrapper mt-5 mb-5" style="margin: 2%;">
+                        <b  style="display: flex; justify-content: center;">{{houses.human.count}} Human</b>
+                            <div class="blog-details-label">
+                                <ul class="tag-list" style="display: flex; justify-content: center;">
+                                    {% for human in houses.human.all %}
+                                    <li>
+                                        <a href="{% url 'human_detail_url' human.uuid %}">{{human.name}}</a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        
+                </div>
+            </div>
+</div>
+
+{% endblock content %}  

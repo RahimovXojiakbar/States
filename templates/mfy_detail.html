@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+
+<div class="section section-padding  mb-10">
+    <div class="container">
+        <!-- Blog Wrapper Start -->
+        <b>
+            <a class="btn btn-secondary btn-hover-primary  mb-2" style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.3); width: 10px; height: 30px; border: 1px solid grey;  display: flex; align-items: center; justify-content: center;" type="submit" href="{% url 'district_detail_url' mfys.district.uuid  %}">←</a>
+        </b>
+        <div class="blog-wrapper">
+            
+            
+
+            <div class="card mt-2 mb-2" style="border-radius: 5px; margin: 5%; box-shadow:4px 4px 15px rgba(0, 0, 0, 0.3)">
+                <div class="blog-details-wrapper mt-2 mb-2" style="margin: 2%;">
+                    <h3 style="text-align: center;">MFY: {{mfys.title}}</h3>
+                 
+                    <div class="row">
+                        <div class="col">
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Chairman:
+                                <b>{{mfys.chairman}}</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Area:
+                                <b>{{mfys.area_km_kv}} km²</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Population:
+                                <b>{{mfys.people}} person</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Total Budget:
+                                <b>{{mfys.total_budget}} $</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Educational Institutions:
+                                <b>{{mfys.educational_institutions}} </b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Industrial Units:
+                                <b>{{mfys.industrial_units}} </b>
+                            </p>
+                            
+                        </div>
+                        <div class="col">
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Poverty Rate:
+                                <b>{{mfys.poverty_rate}} %</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Uneployment Rate:
+                                <b>{{mfys.unemployment_rate}} %</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Literacy Rate:
+                                <b>{{mfys.literacy_rate}} %</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Birth Rate:
+                                <b>{{mfys.birth_rate}} %</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Death Rate:
+                                <b>{{mfys.death_rate}} %</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Average Income Per Person:
+                                <b>{{mfys.average_income_per_person}} $</b>
+                            </p>
+                            
+
+                        </div>
+                    </div>
+                    <div class="col-auto mt-5" style="display: flex; justify-content: center;">
+                        <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Change At:
+                            <b>{{mfys.change_at}}</b>
+                        </p>
+                    </div>
+                    <div class="col mt-5" style="display: flex; justify-content: center;">
+                        <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">About:
+                            <b>{{mfys.about}}</b>
+                        </p>
+                    </div>
+                   
+
+                </div>
+            </div>
+            
+            
+            
+            <div class="card mt-5 mb-5 mt-5" style="border-radius: 5px; margin: 5%; box-shadow:4px 4px 15px rgba(0, 0, 0, 0.3)">
+                <div class="blog-details-wrapper mt-5 mb-5" style="margin: 2%;">
+                        <b  style="display: flex; justify-content: center;">{{mfys.neighborhood.count}} Neighborhood</b>
+                            <div class="blog-details-label">
+                                <ul class="tag-list" style="display: flex; justify-content: center;">
+                                    {% for neighborhood in mfys.neighborhood.all %}
+                                    <li><a href="{% url 'neighborhood_detail_url' neighborhood.uuid %}">{{neighborhood.title}}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        
+                </div>
+            </div>
+</div>
+
+{% endblock content %}  

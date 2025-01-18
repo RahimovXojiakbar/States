@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+
+<div class="section section-padding  mb-10">
+    <div class="container">
+        <!-- Blog Wrapper Start -->
+        <b>
+            <a class="btn btn-secondary btn-hover-primary  mb-2" style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.3); width: 10px; height: 30px; border: 1px solid grey;  display: flex; align-items: center; justify-content: center;" type="submit" href="{% url 'region_detail_url' districts.region.uuid  %}">←</a>
+        </b>
+        <div class="blog-wrapper">
+            
+            
+
+            <div class="card mt-2 mb-2" style="border-radius: 5px; margin: 5%; box-shadow:4px 4px 15px rgba(0, 0, 0, 0.3)">
+                <div class="blog-details-wrapper mt-2 mb-2" style="margin: 2%;">
+                    <h3 style="text-align: center;">District: {{districts.title}}</h3>
+                 
+                    <div class="row">
+                        <div class="col">
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Governor:
+                                <b>{{districts.governor}}</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Area:
+                                <b>{{districts.area_km_kv}} km²</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Population:
+                                <b>{{districts.people}} person</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Total Budget:
+                                <b>{{districts.total_budget}} $</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Educational Institutions:
+                                <b>{{districts.educational_institutions}} </b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Industrial Units:
+                                <b>{{districts.industrial_units}} </b>
+                            </p>
+                            
+                        </div>
+                        <div class="col">
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Poverty Rate:
+                                <b>{{districts.poverty_rate}} %</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Uneployment Rate:
+                                <b>{{districts.unemployment_rate}} %</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Literacy Rate:
+                                <b>{{districts.literacy_rate}} %</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Birth Rate:
+                                <b>{{districts.birth_rate}} %</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Death Rate:
+                                <b>{{districts.death_rate}} %</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Average Income Per Person:
+                                <b>{{districts.average_income_per_person}} $</b>
+                            </p>
+                            
+
+                        </div>
+                    </div>
+                    <div class="col-auto mt-5" style="display: flex; justify-content: center;">
+                        <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Change At:
+                            <b>{{districts.change_at}}</b>
+                        </p>
+                    </div>
+                    <div class="col mt-5" style="display: flex; justify-content: center;">
+                        <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">About:
+                            <b>{{districts.about}}</b>
+                        </p>
+                    </div>
+                   
+
+                </div>
+            </div>
+            
+            
+            
+            <div class="card mt-5 mb-5 mt-5" style="border-radius: 5px; margin: 5%; box-shadow:4px 4px 15px rgba(0, 0, 0, 0.3)">
+                <div class="blog-details-wrapper mt-5 mb-5" style="margin: 2%;">
+                        <b  style="display: flex; justify-content: center;">{{districts.MFY.count}} MFY</b>
+                            <div class="blog-details-label">
+                                <ul class="tag-list" style="display: flex; justify-content: center;">
+                                    {% for mfy in districts.MFY.all %}
+                                    <li><a href="{% url 'mfy_detail_url' mfy.uuid %}">{{mfy.title}}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        
+                </div>
+            </div>
+</div>
+
+{% endblock content %}  

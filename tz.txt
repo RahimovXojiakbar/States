@@ -1,0 +1,20 @@
+
+
+Mazkur kod Django ORM yordamida davlat, hudud, tuman, mahalla,  uy va odamlar kabi tuzilmalarning ma'lumotlar bazasidagi modelini yaratadi. 
+
+Loyihaning nomi:
+    Davlatlar haqida to'liq malumot
+
+Loyihaning maqsadi:
+    Davlat boshqaruvi tizimini raqamli shaklda tashkil etish, aholining ijtimoiy holati va ma'lumotlarini boshqarish.
+
+Modellar:
+    State (Davlat): Davlatning nomi, prezidenti, bayrog‘i, gerbi, va maydoni.
+    Region (Viloayt): Davlat tarkibidagi hududlar haqida ma'lumot.
+    District (Tuman): Viloatga tegishli tumanlarning xususiyatlari.
+    MFY (Mahalla Fuqarolar Yig'ini): Tuman tarkibidagi mahalla fuqarolar yig‘ini ma'lumotlari.
+    Neighborhood (Mahalla): MFY tarkibidagi Mahalla ma'lumotlari.
+    House (Uy): Mahalla tarkibidagi uylar va ularning aholisi.
+    Human (Odam): Uyda yashovchilar haqida ma'lumot.
+
+Asosiy xususiyatlar: Har bir modelda unikal identifikator, tegishli tashqi kalit bog‘lanishlari va ko‘rinish tartibi mavjud.

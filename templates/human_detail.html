@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+
+<div class="section section-padding  mb-10">
+    <div class="container">
+        <!-- Blog Wrapper Start -->
+        <b>
+            <a class="btn btn-secondary btn-hover-primary  mb-2" style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.3); width: 10px; height: 30px; border: 1px solid grey;  display: flex; align-items: center; justify-content: center;" type="submit" href="{% url 'house_detail_url' humans.house.uuid  %}">←</a>
+        </b>
+        <div class="blog-wrapper">
+            
+            
+
+            <div class="card mt-2 mb-2" style="border-radius: 5px; margin: 5%; box-shadow:4px 4px 15px rgba(0, 0, 0, 0.3)">
+                <div class="blog-details-wrapper mt-2 mb-2" style="margin: 2%;">
+                    <h3 style="text-align: center;">Human: {{humans.name}}</h3>
+                 
+                    <div class="row">
+                        <div class="col">
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Bith Date:
+                                <b>{{humans.birth_date}} </b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Email:
+                                <b>{{humans.email}} </b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)"> Status:
+                                <b>{{humans.status}} </b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)"> Information:
+                                <b>{{humans.information}} </b>
+                            </p>
+                            
+                            
+                        </div>
+                        <div class="col">
+                            
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Working Hours Per Week:
+                                <b>{{humans.working_hours_per_week}} hours</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Gender Distribution:
+                                <b>{{humans.gender_distribution}} </b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Living Space Per Person:
+                                <b>{{humans.living_space_per_person}} m²</b>
+                            </p>
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Change At:
+                                <b>{{humans.change_at}} </b>
+                            </p>
+                            
+
+                        </div>
+                    </div>
+                    
+                    <div class="col mt-5" style="display: flex; justify-content: center;">
+                        <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">BIO:
+                            <b>{{humans.BIO}}</b>
+                        </p>
+                    </div>
+                   
+
+                </div>
+            </div>
+            
+            
+            
+            
+</div>
+
+{% endblock content %}  
