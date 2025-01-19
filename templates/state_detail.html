@@ -25,6 +25,15 @@
     border-radius: 15px;
     z-index: 10; /* Hoverda ustida ko'rinishi uchun */
 }
+p:hover{
+    transform: scale(1.05); /* Kattalashtirish */
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.5); /* Chuqurroq soyani qo'shish */
+    z-index: 10; /* Hoverda ustida ko'rinishi uchun */
+    color: black;
+    background-color: rgb(227, 230, 233);
+    transition: background-color 1.0s ease-in-out;
+}
+
     
     
 </style>
@@ -124,7 +133,7 @@
                             <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Poverty Rate:
                                 <b>{{state_query.poverty_rate}} %</b>
                             </p>
-                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Literaacy Rate:
+                            <p style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1)">Literacy Rate:
                                 <b>{{state_query.literacy_rate}} %</b>
                             </p>
                         </div>

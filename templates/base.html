@@ -38,6 +38,15 @@
 
 </head>
 
+<style>
+    .home:hover{
+    transform: scale(1.15); /* Kattalashtirish */
+    z-index: 10; /* Hoverda ustida ko'rinishi uchun */
+    
+    transition: transform 1.0s ease-in-out;
+}
+</style>
+
 <body>
 
     <div class="main-wrapper">
@@ -63,7 +72,7 @@
                         <!-- Header Menu Start -->
                         <div class="header-menu d-none d-lg-block">
                             <ul class="nav-menu">
-                                <li><a href="{% url 'states_url' %}">Home</a></li>
+                                <li class="home"><a href="{% url 'states_url' %}">Home</a></li>
                                
                             </ul>
 
@@ -134,9 +143,7 @@
         <!-- Footer End -->
 
         <!--Back To Start-->
-        <a href="#" class="back-to-top">
-            <i class="icofont-simple-up"></i>
-        </a>
+        
         <!--Back To End-->
 
     </div>
