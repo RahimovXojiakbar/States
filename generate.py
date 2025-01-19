@@ -12,7 +12,7 @@ from faker import Faker
 from main import models
 
 
-models.State.objects.all().delete()
+# models.State.objects.all().delete()
 models.Region.objects.all().delete()
 models.District.objects.all().delete()
 models.MFY.objects.all().delete()
@@ -46,40 +46,40 @@ emblem_images = [
 
 # =======================================================================================================
 
-for _ in range(15):
+# for _ in range(15):
 
-    states = models.State.objects.create(
-        continent = fake.random_element(['Afrika', 'Amerika', 'Asia', 'Europa', 'Oceania']),
-        title = fake.word().capitalize(),
-        president = fake.name_male(),
-        about = fake.text(max_nb_chars=60),
-        flag = random.choice(flag_images),
-        anthem = fake.text(max_nb_chars=200),
-        emblem = random.choice(emblem_images),
-        language = fake.word().capitalize(),
-        area_km_kv = round(random.uniform(100, 900), 2),
-        people = round(random.uniform(1000000, 100000000)),
-        capital = fake.word().capitalize(),
-        gdp = round(random.uniform(50, 500), 2),
-        unemployment_rate = fake.random_int(min=5, max=20),
-        inflation_rate = fake.random_int(min=3, max=15),
-        poverty_rate = fake.random_int(min=5, max=30),
-        literacy_rate = fake.random_int(min=85, max=100),
-        life_expectancy = fake.random_int(min=60, max=85),
-        population_growth_rate = fake.random_int(min=1, max=10),
-        urban_population_percentage = fake.random_int(min=40, max=90),
-        birth_rate = fake.random_int(min=10, max=40),
-        death_rate = fake.random_int(min=5, max=15)
+#     states = models.State.objects.create(
+#         continent = fake.random_element(['Afrika', 'Amerika', 'Asia', 'Europa', 'Oceania']),
+#         title = fake.word().capitalize(),
+#         president = fake.name_male(),
+#         about = fake.text(max_nb_chars=60),
+#         flag = random.choice(flag_images),
+#         anthem = fake.text(max_nb_chars=200),
+#         emblem = random.choice(emblem_images),
+#         language = fake.word().capitalize(),
+#         area_km_kv = round(random.uniform(100, 900), 2),
+#         people = round(random.uniform(1000000, 100000000)),
+#         capital = fake.word().capitalize(),
+#         gdp = round(random.uniform(50, 500), 2),
+#         unemployment_rate = fake.random_int(min=5, max=20),
+#         inflation_rate = fake.random_int(min=3, max=15),
+#         poverty_rate = fake.random_int(min=5, max=30),
+#         literacy_rate = fake.random_int(min=85, max=100),
+#         life_expectancy = fake.random_int(min=60, max=85),
+#         population_growth_rate = fake.random_int(min=1, max=10),
+#         urban_population_percentage = fake.random_int(min=40, max=90),
+#         birth_rate = fake.random_int(min=10, max=40),
+#         death_rate = fake.random_int(min=5, max=15)
 
-    )
-    states.save()
+#     )
+#     states.save()
 models.State.objects.all()
 print('Add States')
 
 
 # =======================================================================================================
 
-for _ in range(12):
+for _ in range(50):
     regions = models.Region.objects.create(
         title = fake.word().capitalize(),
         state = choice(models.State.objects.all()),
@@ -100,7 +100,7 @@ print('Add Regions')
 
 # =======================================================================================================
 
-for _ in range(30):
+for _ in range(150):
     districts = models.District.objects.create(
         title = fake.word().capitalize(),
         region = choice(models.Region.objects.all()),
@@ -127,7 +127,7 @@ print('Add Districts')
 
 # =======================================================================================================
 
-for _ in range(50):
+for _ in range(500):
     mfy = models.MFY.objects.create(
         title=fake.word().capitalize(),
         district=choice(models.District.objects.all()),
@@ -153,7 +153,7 @@ print("Add MFYs")
 
 # =======================================================================================================
 
-for _ in range(100):
+for _ in range(1300):
     neighborhood = models.Neighborhood.objects.create(
         title=fake.word().capitalize(),
         elder=fake.name(),
@@ -180,7 +180,7 @@ print("Add Neighborhoods")
 
 # =======================================================================================================
 
-for _ in range(500):
+for _ in range(2500):
     house = models.House.objects.create(
         house_boss=fake.name(),
         house_number=random.randint(1, 100),
@@ -204,7 +204,7 @@ print("Add Houses")
 
 # =======================================================================================================
 
-for _ in range(1000):
+for _ in range(4000):
     human = models.Human.objects.create(
         name=fake.first_name(),
         email=fake.email(),

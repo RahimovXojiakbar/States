@@ -2,7 +2,32 @@
 
 {% block content %}
 
-
+<style>
+    .flag{
+        border-radius: 15px;
+    }
+    .emblem:hover{
+    transform: scale(1.05); /* Kattalashtirish */
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.5); /* Chuqurroq soyani qo'shish */
+    border-radius: 15px;
+    z-index: 10; /* Hoverda ustida ko'rinishi uchun */
+   
+    }
+    .flag:hover {
+    transform: scale(1.05); /* Kattalashtirish */
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.5); /* Chuqurroq soyani qo'shish */
+    border-radius: 15px;
+    z-index: 10; /* Hoverda ustida ko'rinishi uchun */
+}
+    .regions:hover {
+    transform: scale(1.15); /* Kattalashtirish */
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.5); /* Chuqurroq soyani qo'shish */
+    border-radius: 15px;
+    z-index: 10; /* Hoverda ustida ko'rinishi uchun */
+}
+    
+    
+</style>
 
 <div class="section section-padding  mb-10">
     <div class="container">
@@ -18,7 +43,7 @@
                 <div class="blog-details-wrapper mt-2 mb-2" style="margin: 2%;">
                     <div class="row">
                         <div class="col-6" style="display: flex; justify-content: center; align-items: center;">
-                            <img src="{{state_query.flag.url}}" alt="Flag" style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1); height: 200px; width: 400px;">
+                            <img src="{{state_query.flag.url}}" class="flag" alt="Flag" style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1); height: 200px; width: 400px;">
                         </div>
                         <div class="col-6">
                             <h3>State: {{state_query.title}}</h3>
@@ -70,7 +95,7 @@
                             </p>
                         </div>
                         <div class="col" style="display: flex; justify-content: center;">
-                            <img src="{{ state_query.emblem.url }}" alt="Emblem" style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1); height: 200px; width: 200px; border-radius: 10px;">
+                            <img src="{{ state_query.emblem.url }}" class="emblem" alt="Emblem" style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.1); height: 200px; width: 200px; border-radius: 10px;">
                         </div>
                         
                     </div>
@@ -141,7 +166,7 @@
                                 <ul class="tag-list" style="display: flex; justify-content: center;">
                                     
                                     {% for region in state_query.region.all %}
-                                    <li><a href="{% url 'region_detail_url' region.uuid %}" style="margin: 5px; align-items: center; justify-content: center; display: flex; box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3)"><h6>{{region.title}}</h6></a></li>
+                                    <li><a href="{% url 'region_detail_url' region.uuid %}" class="regions" style="margin: 5px; align-items: center; justify-content: center; display: flex; box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3)"><h6>{{region.title}}</h6></a></li>
                                     {% endfor %}
                                 </ul>
                             </div>
