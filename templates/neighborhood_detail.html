@@ -87,7 +87,7 @@
                             <div class="blog-details-label">
                                 <ul class="tag-list" style="display: flex; justify-content: center;">
                                     {% for house in neighborhoods.house.all %}
-                                    <li><a href="{% url 'house_detail_url' house.uuid %}">{{house.house_number}}</a></li>
+                                    <li><a href="{% url 'house_detail_url' house.uuid %}" style="box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3)">{{house.house_number}}</a></li>
                                     {% endfor %}
                                 </ul>
                             </div>

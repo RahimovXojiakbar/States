@@ -80,7 +80,7 @@
                                 <ul class="tag-list" style="display: flex; justify-content: center;">
                                     {% for human in houses.human.all %}
                                     <li>
-                                        <a href="{% url 'human_detail_url' human.uuid %}">{{human.name}}</a>
+                                        <a href="{% url 'human_detail_url' human.uuid %}" style="box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3)">{{human.name}}</a>
                                     </li>
                                     {% endfor %}
                                 </ul>

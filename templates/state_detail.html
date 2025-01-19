@@ -134,14 +134,14 @@
             </div>
 
 
-            <div class="card mt-5 mb-5 mt-5" style="border-radius: 5px; margin: 5%; box-shadow:4px 4px 15px rgba(0, 0, 0, 0.3)">
+            <div class="card mt-5 mb-5 mt-5" style="border-radius: 5px; margin: 5%; box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3)">
                 <div class="blog-details-wrapper mt-5 mb-5" style="margin: 2%;">
                         <b style="display: flex; justify-content: center;">{{state_query.region.count}} Regions</b>
                             <div class="blog-details-label">
                                 <ul class="tag-list" style="display: flex; justify-content: center;">
                                     
                                     {% for region in state_query.region.all %}
-                                    <li><a href="{% url 'region_detail_url' region.uuid %}" style="margin: 5px; align-items: center; justify-content: center; display: flex;"><h6>{{region.title}}</h6></a></li>
+                                    <li><a href="{% url 'region_detail_url' region.uuid %}" style="margin: 5px; align-items: center; justify-content: center; display: flex; box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3)"><h6>{{region.title}}</h6></a></li>
                                     {% endfor %}
                                 </ul>
                             </div>

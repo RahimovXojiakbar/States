@@ -87,7 +87,7 @@
                             <div class="blog-details-label">
                                 <ul class="tag-list" style="display: flex; justify-content: center;">
                                     {% for mfy in districts.MFY.all %}
-                                    <li><a href="{% url 'mfy_detail_url' mfy.uuid %}">{{mfy.title}}</a></li>
+                                    <li><a href="{% url 'mfy_detail_url' mfy.uuid %}" style="box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3)">{{mfy.title}}</a></li>
                                     {% endfor %}
                                 </ul>
                             </div>

@@ -1,5 +1,3 @@
-
-
 Mazkur kod Django ORM yordamida davlat, hudud, tuman, mahalla,  uy va odamlar kabi tuzilmalarning ma'lumotlar bazasidagi modelini yaratadi. 
 
 Loyihaning nomi:

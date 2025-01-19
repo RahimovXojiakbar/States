@@ -87,7 +87,7 @@
                             <div class="blog-details-label">
                                 <ul class="tag-list" style="display: flex; justify-content: center;">
                                     {% for neighborhood in mfys.neighborhood.all %}
-                                    <li><a href="{% url 'neighborhood_detail_url' neighborhood.uuid %}">{{neighborhood.title}}</a></li>
+                                    <li><a href="{% url 'neighborhood_detail_url' neighborhood.uuid %}" style="box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3)">{{neighborhood.title}}</a></li>
                                     {% endfor %}
                                 </ul>
                             </div>
