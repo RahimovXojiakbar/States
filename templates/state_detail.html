@@ -5,19 +5,23 @@
 <style>
     .flag{
         border-radius: 15px;
+        transition:  transform 0.4s ease-in-out!important;
+
     }
     .emblem:hover{
     transform: scale(1.05); /* Kattalashtirish */
     box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.5); /* Chuqurroq soyani qo'shish */
     border-radius: 15px;
     z-index: 10; /* Hoverda ustida ko'rinishi uchun */
-   
+    transition:  transform 1.0s ease-in-out;
+
     }
     .flag:hover {
     transform: scale(1.05); /* Kattalashtirish */
     box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.5); /* Chuqurroq soyani qo'shish */
     border-radius: 15px;
     z-index: 10; /* Hoverda ustida ko'rinishi uchun */
+    transition:  transform 1.0s ease-in-out;
 }
     .regions:hover {
     transform: scale(1.15); /* Kattalashtirish */
@@ -31,7 +35,30 @@ p:hover{
     z-index: 10; /* Hoverda ustida ko'rinishi uchun */
     color: black;
     background-color: rgb(227, 230, 233);
-    transition: background-color 1.0s ease-in-out;
+    transition: background-color 1.0s ease-in-out, transform 1.0s ease-in-out;
+}
+p{
+    transition: background-color 1.0s ease-in-out, transform 1.0s ease-in-out!important;
+
+}
+.tag-list a:hover {
+    background-color:  rgb(204, 208, 211)!important;
+    border-color: rgb(204, 208, 211)!important;
+    transition: background-color 1.0s ease-in-out, transform 1.0s ease-in-out!important;
+}
+.tag-list a{
+    transition: background-color 1.0s ease-in-out, transform 1.0s ease-in-out!important;
+
+}
+.btn:hover{
+    background-color:rgb(204, 208, 211);
+    transform: scale(0.95);
+    transition: background-color 1.0s ease-in-out, transform 1.0s ease-in-out!important;
+}
+.btn{
+    border-color: white!important;
+    transition: background-color 1.0s ease-in-out, transform 1.0s ease-in-out!important;
+
 }
 
     
@@ -44,7 +71,7 @@ p:hover{
         <!-- Blog Wrapper Start -->
         <div class="blog-wrapper">
             <b>
-                <a class="btn btn-secondary btn-hover-primary" style="width: 10px; height: 30px; margin-top: -50px; box-shadow:4px 4px 15px rgba(0, 0, 0, 0.3); border: 1px solid grey;  display: flex; align-items: center;  justify-content: center;" type="submit" href="{% url 'states_url' %}">←</a>
+                <a class="btn" style="width: 10px; height: 30px; margin-top: -50px; box-shadow:4px 4px 15px rgba(0, 0, 0, 0.3); border: 1px solid grey;  display: flex; align-items: center;  justify-content: center;" type="submit" href="{% url 'states_url' %}">←</a>
             </b>
             
 

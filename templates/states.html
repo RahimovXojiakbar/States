@@ -12,9 +12,38 @@
         transform: scale(1.05); /* Kattalashtirish */
         box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.5); /* Chuqurroq soyani qo'shish */
         z-index: 10; /* Hoverda ustida ko'rinishi uchun */
-        background-color: rgb(217, 223, 228);
-        transition: background-color 1.0s ease-in-out;
+        background-color: rgb(238, 242, 245);
+        transition: background-color 1.0s ease-in-out, transform 1.0s ease-in-out ;
     }
+    .single-blog{
+        transition: background-color 1.0s ease-in-out, transform 1.0s ease-in-out ;
+
+    }
+    .btn:hover{
+        background-color:rgb(159, 159, 167)!important;
+        transform: scale(0.95);
+        transition: background-color 1.0s ease-in-out, transform 1.0s ease-in-out!important;
+        color: rgb(2, 2, 20);
+    }
+    .btn{
+        background-color: rgb(199, 192, 192)!important;
+        transition: background-color 1.0s ease-in-out, transform 1.0s ease-in-out!important;
+
+    }
+    .search-input.dropdown-menu:hover{
+        transform: scale(1.05)!important;
+        transition: transform 1.0s ease-in;
+    }
+    .search-input.dropdown-menu{
+        transform: scale(1)!important;
+        transition: transform 1.0s ease-in;
+    }
+    .filter-check:hover{
+        transform: scale(1.05)!important;
+        transition: transform 1.0s ease-in; 
+    
+    }
+    
 </style>
 
 
@@ -83,7 +112,7 @@
                         </div>
                         <div class="blog-content">
                             <h4 class="title"  style="justify-content: center; display: flex;">{{ state.title }}</h4>
-                            <a href="{% url 'state_detail_url' state.uuid %}" class="btn btn-secondary btn-hover-primary"  style="justify-content: center; display: flex;">Read More</a>
+                            <a href="{% url 'state_detail_url' state.uuid %}" class="btn"  style="justify-content: center; display: flex;">Read More</a>
                         </div>
                     </div>
                     <!-- Single Blog End -->

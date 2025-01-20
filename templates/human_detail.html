@@ -10,7 +10,21 @@
     z-index: 10; /* Hoverda ustida ko'rinishi uchun */
     color: black;
     background-color: rgb(227, 230, 233);
-    transition: background-color 1.0s ease-in-out;
+    transition: background-color 1.0s ease-in-out, transform 1.0s ease-in-out;
+}
+p{
+    transition: background-color 1.0s ease-in-out, transform 1.0s ease-in-out!important;
+
+}
+.btn:hover{
+    background-color:rgb(204, 208, 211);
+    transform: scale(0.95);
+    transition: background-color 1.0s ease-in-out, transform 0.4s ease-in-out!important;
+}
+.btn{
+    border-color: white!important;
+    transition: background-color 1.0s ease-in-out, transform 0.4s ease-in-out!important;
+
 }
 </style>
 
@@ -18,7 +32,7 @@
     <div class="container">
         <!-- Blog Wrapper Start -->
         <b>
-            <a class="btn btn-secondary btn-hover-primary  mb-2" style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.3); width: 10px; height: 30px; border: 1px solid grey;  display: flex; align-items: center; justify-content: center;" type="submit" href="{% url 'house_detail_url' humans.house.uuid  %}">←</a>
+            <a class="btn  mb-2" style="box-shadow:4px 4px 15px rgba(0, 0, 0, 0.3); width: 10px; height: 30px; border: 1px solid grey;  display: flex; align-items: center; justify-content: center;" type="submit" href="{% url 'house_detail_url' humans.house.uuid  %}">←</a>
         </b>
         <div class="blog-wrapper">
             
