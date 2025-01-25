@@ -213,7 +213,7 @@ for _ in range(4000):
         information=choice(['HIGH', 'MIDDLE', 'NO']),
         house=choice(models.House.objects.all()),
         working_hours_per_week=random.randint(0, 40),
-        gender_distribution=choice(['MALE', 'FAMALE']),
+        gender_distribution=choice(['MALE', 'FEMALE']),
         living_space_per_person=round(random.uniform(10, 50), 2),
     )
     human.save()

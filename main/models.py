@@ -23,16 +23,12 @@ class BaseModel(MyShortUuid):
     class Meta:
         abstract = True
 
-        
-
-
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 class InformationLevel(models.TextChoices):
     HIGH = 'HIGH'
     MIDDLE = 'MIDDLE'
     NO = 'NO'
-
-
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -77,8 +73,6 @@ class State(BaseModel):
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-
 class Region(BaseModel):
     title = models.CharField(max_length=200)
     state = models.ForeignKey(State, on_delete=models.SET_NULL, null=True, related_name='region')
@@ -100,7 +94,7 @@ class Region(BaseModel):
     class Meta:
         ordering = ['-uuid']
 
-
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 class District(BaseModel):
     title = models.CharField(max_length=200)
@@ -127,7 +121,7 @@ class District(BaseModel):
     class Meta:
         ordering = ['-uuid']
 
-
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 class MFY(BaseModel):
     title = models.CharField(max_length=200)
@@ -154,8 +148,7 @@ class MFY(BaseModel):
     class Meta:
         ordering = ['-uuid']
 
-
-
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 class Neighborhood(BaseModel):   
     title = models.CharField(max_length=200)
@@ -182,6 +175,8 @@ class Neighborhood(BaseModel):
     class Meta:
         ordering = ['-uuid']
 
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 class House(BaseModel):
     house_boss = models.CharField(max_length=200)
     house_number= models.PositiveIntegerField()
@@ -204,8 +199,7 @@ class House(BaseModel):
     class Meta:
         ordering = ['house_number', 'a_b']
 
-
-
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 class Status(models.TextChoices):
     KINDERGARTEN = 'Kindergarten'
@@ -224,7 +218,7 @@ class Human(BaseModel):
     information = models.CharField(max_length=200, choices=InformationLevel.choices, default=InformationLevel.NO)
     house = models.ForeignKey(House, on_delete=models.SET_NULL, null=True, related_name='human')
     working_hours_per_week = models.PositiveIntegerField(default=0, verbose_name="Haftalik ish soatlari")
-    gender_distribution = models.CharField(max_length=50, choices={'MALE':'MALE', 'FAMALE':'FAMALE'}, verbose_name="Jins")
+    gender_distribution = models.CharField(max_length=50, choices={'MALE':'MALE', 'FEMALE':'FEMALE'}, verbose_name="Jins")
     living_space_per_person = models.DecimalField(max_digits=10, decimal_places=2, default=0.0, verbose_name="Uyda har bir a'zoga to'g'ri keladigan maydon (m²)")
     change_at = models.DateTimeField(auto_now_add=True)
 
