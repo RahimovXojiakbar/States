@@ -51,5 +51,5 @@ class HouseAdmin(ModelAdmin):
 class HumanAdmin(ModelAdmin):
     list_display = ['uuid', 'name', 'house__house_number']
     list_filter = ['house', 'status', 'information']
-    search_fields = ['name', 'user']
+    search_fields = ['name']
 

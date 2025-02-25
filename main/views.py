@@ -109,3 +109,4 @@ def human_detail_view(request, uuid):
     }
     return render(request, 'human_detail.html', context)
 
+
