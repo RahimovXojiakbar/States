@@ -7,7 +7,8 @@ Loyiha maqsadi : Davlatlar haqida to'liq malumot. Davlat boshqaruvi tizimini raq
 - CSS
 - SCSS
 
-## O'rnatish
+## O'rnatish 
+Quyidagi harakatlar terminal (bash) da amalga oshirilsin
 1. Repositoryni klonlang:
    ```bash
    git clone https://github.com/RahimovXojiakbar/States-Fullstack.git
