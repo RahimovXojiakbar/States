@@ -5,7 +5,7 @@ Loyiha maqsadi : Davlatlar haqida to'liq malumot. Davlat boshqaruvi tizimini raq
    ```bash
    git clone https://github.com/RahimovXojiakbar/States-Fullstack.git
 
-2. Virtual muhit yaratish:
+2. Virtual muhit yarating:
    ```bash
    py -m venv env
 
@@ -13,6 +13,6 @@ Loyiha maqsadi : Davlatlar haqida to'liq malumot. Davlat boshqaruvi tizimini raq
    ```bash
    pip install -r requirements.txt
 
-4. Ishga tushirish
+4. Ishga tushiring
    ```bash
    py manage.py runserver
