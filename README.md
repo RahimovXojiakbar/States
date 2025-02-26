@@ -11,7 +11,7 @@ Loyiha maqsadi : Davlatlar haqida to'liq malumot. Davlat boshqaruvi tizimini raq
 Quyidagi harakatlar terminal (bash) da amalga oshirilsin
 1. Repositoryni klonlang:
    ```bash
-   git clone https://github.com/RahimovXojiakbar/States-Fullstack.git
+   git clone https://github.com/RahimovXojiakbar/States.git
 
 2. Loyiha papkasiga o'ting:
    ```bash
