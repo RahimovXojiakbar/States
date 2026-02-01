@@ -39,11 +39,53 @@
         transform: scale(1)!important;
         transition: transform 1.0s ease-in;
     }
-    .filter-check:hover{
-        transform: scale(1.05)!important;
-        transition: transform 1.0s ease-in; 
-    
+    .top-bar-filter {
+        float: right;
+        margin-right: 10.5%;
+        margin-top: 23px;
     }
+
+    .filter-check {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .filter-check li {
+        display: inline-block;
+    }
+
+    .courses-select {
+        position: relative;
+        min-width: 200px;
+    }
+
+    .courses-select select {
+        width: 100%;
+        padding: 10px 35px 10px 15px;
+        border: none;
+        border-radius: 25px;
+        background-color: #fff;
+        box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+        appearance: none;
+        font-size: 14px;
+        color: #333;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .courses-select select:hover {
+        transform: scale(1.02);
+        box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .courses-select select:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(100, 149, 237, 0.3);
+    }
+
+    
+
     
 </style>
 
@@ -62,7 +104,6 @@
                     value="{{ search_query|default:'' }}"
 
                     >
-                    <input type="hidden" name="states_filter" value="{{ request.GET.states_filter }}">
                     <button type="submit" style="display: none;"></button>
             </form>
         </div>
@@ -72,10 +113,10 @@
 
     
    
-    <div class="top-bar-filter" style="float: right; margin-right: 10.5%;">
+    <div class="top-bar-filter">
         <ul class="filter-check">
             <li>
-                <div class="courses-select" style="box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3); border-radius: 18px;">
+                <div class="courses-select" style="box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);  border-radius: 18px;">
                     <form action="{% url 'states_url' %}" method="get">
                         <label for="autoSizingSelect" class="visually-hidden">Preference</label>
                         <select name="states_filter" id="autoSizingSelect" onchange="this.form.submit()">
